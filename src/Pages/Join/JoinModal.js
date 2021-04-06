@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import Join from './Join';
 
-class componentName extends Component {
+class JoinModal extends Component {
   state = {
     isLogin: false,
   };
-  handlePropsData = () => {
-    console.log('확인');
-    this.setState({ isLogin: !this.state.isLogin });
-  };
-  render() {
-    const { isLogin } = this.state;
 
+  handlePropsData = () => {
+    const { isLogin } = this.state;
+    this.setState({ isLogin: isLogin ? signInProps : JoinProps });
+    console.log('ㅎㅇ');
+  };
+
+  render() {
+    // const { isLogin } = this.state;
     return (
       <div className="Modal">
         <Join
           handlePropsData={this.handlePropsData}
-          fomet={isLogin ? signInProps : JoinProps}
+          // fomet={isLogin ? signInProps : JoinProps}
         />
       </div>
     );
@@ -57,4 +59,4 @@ const signInProps = {
   messageButton: '회원가입',
 };
 
-export default componentName;
+export default JoinModal;

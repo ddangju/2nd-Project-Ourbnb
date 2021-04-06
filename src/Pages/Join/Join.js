@@ -1,11 +1,13 @@
 import './Join.scss';
 import React from 'react';
 import { kakaoapi } from '../../config';
+// import { render } from 'react-dom/cjs/react-dom.development';
+// import { render } from '@testing-library/react';
 
 const Join = props => {
   const { setIsJoin } = props;
 
-  const kakaoLogin = props => {
+  const kakaoLogin = () => {
     const { Kakao } = window;
     Kakao.Auth.login({
       success: function (response) {

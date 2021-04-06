@@ -5,12 +5,13 @@ import { SiAirbnb } from 'react-icons/si';
 import { BsList } from 'react-icons/bs';
 import { FaRegUserCircle } from 'react-icons/fa';
 import { RiLoginBoxLine } from 'react-icons/ri';
-
 import Join from '../../Pages/Join/Join';
 
-const Nav = props => {
-  const { isJoin, setIsJoin } = props;
+const Nav = () => {
+  // class 컴포넌트에서 STATE 정의
+  const [isJoin, setIsJoin] = useState(false);
   const history = useHistory();
+
   const goToMypage = () => {
     history.push('/mypage');
   };
@@ -37,7 +38,7 @@ const Nav = props => {
           <div>
             <FaRegUserCircle size={28} onClick={goToMypage} />
           </div>
-          {isJoin && <Join isJoin={isJoin} setIsJoin={setIsJoin} />}
+          {isJoin && <Join setIsJoin={setIsJoin} />}
         </span>
       </Navicon>
     </Box>
